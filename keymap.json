@@ -37,18 +37,6 @@
     },
   },
   {
-    "context": "Workspace",
-    "bindings": {
-      "cmd-shift-j": "git_panel::ToggleFocus",
-    },
-  },
-  {
-    "context": "Workspace",
-    "unbind": {
-      "cmd-shift-j": "agent::OpenSettings",
-    },
-  },
-  {
     "context": "VimControl && !menu",
     "bindings": {
       "g b": "vim::SelectNext",
@@ -64,24 +52,26 @@
     "context": "Editor",
     "bindings": {
       "alt-q": "editor::Rewrap"
-    }
-  },
-  {
-    "context": "Editor",
+    },
     "unbind": {
       "cmd-k q": "editor::Rewrap"
     }
   },
   {
-    "context": "Workspace",
-    "bindings": {
-      "alt-cmd-shift-i": "multi_workspace::ToggleWorkspaceSidebar"
-    }
+      "context": "Workspace",
+      "bindings": {
+        "cmd-shift-g": "git_panel::ToggleFocus",
+        "cmd-shift-h": "workspace::ToggleLeftDock",
+        "cmd-shift-r": "search::ToggleReplace",
+        "cmd-shift-l": "multi_workspace::ToggleWorkspaceSidebar",
+        "cmd-shift-j": "agents_sidebar::ToggleThreadSwitcher",
+        "cmd-shift-k": ["agents_sidebar::ToggleThreadSwitcher", { "select_last": true }]
+      },
+      "unbind": {
+        "cmd-shift-j": "agent::OpenSettings",
+        "cmd-shift-h": "search::ToggleReplace",
+        "cmd-shift-d": "debug_panel::ToggleFocus",
+        "alt-cmd-j": "multi_workspace::ToggleWorkspaceSidebar"
+      }
   },
-  {
-    "context": "Workspace",
-    "unbind": {
-      "alt-cmd-j": "multi_workspace::ToggleWorkspaceSidebar"
-    }
-  }
 ]
