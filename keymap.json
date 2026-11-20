@@ -64,6 +64,7 @@
       "context": "Editor",
       "unbind": {
         "cmd-l": "editor::SelectLine",
+        "cmd-shift-k": "editor::DeleteLine",
         "cmd-shift-l": "editor::SelectAllMatches"
       }
     },
