@@ -1,23 +1,4 @@
-// Zed keymap
-//
-// For information on binding keys, see the Zed
-// documentation: https://zed.dev/docs/key-bindings
-//
-// To see the default key bindings run `zed: open default keymap`
-// from the command palette.
 [
-  {
-    "context": "Workspace",
-    "bindings": {
-      // "shift shift": "file_finder::Toggle"
-    },
-  },
-  {
-    "context": "Editor && vim_mode == insert",
-    "bindings": {
-      // "j k": "vim::NormalBefore"
-    },
-  },
   {
     "context": "Editor",
     "unbind": {
@@ -60,18 +41,49 @@
   {
       "context": "Workspace",
       "bindings": {
-        "cmd-shift-g": "git_panel::ToggleFocus",
+        "cmd-h": "tab_switcher::Toggle",
+        "cmd-l": "tab_switcher::ToggleAll",
+        "cmd-shift-d": "git_panel::ToggleFocus",
         "cmd-shift-h": "workspace::ToggleLeftDock",
         "cmd-shift-r": "search::ToggleReplace",
-        "cmd-shift-l": "multi_workspace::ToggleWorkspaceSidebar",
+        "cmd-shift-l": "workspace::ToggleRightDock",
+        "alt-cmd-shift-l": "multi_workspace::ToggleWorkspaceSidebar",
         "cmd-shift-j": "agents_sidebar::ToggleThreadSwitcher",
         "cmd-shift-k": ["agents_sidebar::ToggleThreadSwitcher", { "select_last": true }]
       },
       "unbind": {
+        "cmd-h": "zed::Hide",
+        "cmd-l": "agent::ToggleFocus",
         "cmd-shift-j": "agent::OpenSettings",
         "cmd-shift-h": "search::ToggleReplace",
         "cmd-shift-d": "debug_panel::ToggleFocus",
         "alt-cmd-j": "multi_workspace::ToggleWorkspaceSidebar"
       }
+  },
+  {
+      "context": "Editor",
+      "unbind": {
+        "cmd-l": "editor::SelectLine",
+        "cmd-shift-l": "editor::SelectAllMatches"
+      }
+    },
+  {
+    "context": "Editor && mode == full",
+    "unbind": {
+      "cmd-k": "assistant::InlineAssist",
+      "cmd-l": "agent::AddSelectionToThread",
+      "cmd-shift-l": "agent::AddSelectionToThread"
+    }
+  },
+  {
+    "context": "AgentPanel || MessageEditor > Editor",
+    "unbind": {
+      "cmd-l": "workspace::ToggleRightDock"
+    }
+  },
+  {
+    "unbind": {
+      "cmd-h": "zed::Hide"
+    }
   },
 ]
